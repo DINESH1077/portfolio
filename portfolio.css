@@ -1,0 +1,417 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: url('Images/5166950.jpg');
+    color: white;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Utility Classes for Reuse */
+.animate-fade {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.animate-left {
+    animation: slideInLeft 1.2s ease forwards;
+}
+
+.animate-right {
+    animation: slideInRight 1.2s ease forwards;
+}
+
+.animate-delay-1 {
+    animation-delay: 0.3s;
+}
+
+.animate-delay-2 {
+    animation-delay: 0.6s;
+}
+
+.animate-delay-3 {
+    animation-delay: 0.9s;
+}
+
+/* Header & Navbar */
+header,
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    animation: fadeInUp 1s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    background-color: transparent;
+}
+
+.nav-btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.nav-btn:hover {
+    background-color: #00bcd4;
+    color: #000;
+    transform: scale(1.05);
+}
+
+.logo-img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    animation: fadeInUp 1.5s ease;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+/* Hero/Main */
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    height: 100vh;
+    background: url('Images/2202758.jpg') no-repeat center center/cover;
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.main h1,
+.main .buttons {
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1.5s ease;
+}
+
+.main h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.buttons {
+    margin: 1rem;
+}
+
+.buttons button {
+    margin: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse 4s infinite;
+}
+
+.buttons button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+.btn-cv {
+    background-color: #2cb67d;
+    color: white;
+}
+
+/* Sections */
+.about-me,
+.Education {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 3rem auto;
+    max-width: 600px;
+    z-index: 2;
+    position: relative;
+    animation: slideInLeft 1s ease;
+}
+
+.work-section {
+    max-width: 100%;
+    padding: 3rem 2rem;
+    text-align: center;
+    animation: fadeInUp 1.2s ease;
+}
+
+.work-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Skills Sections */
+.skills-section {
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 800px;
+    text-align: center;
+    animation: fadeInUp 1.2s ease;
+}
+
+.skills-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #f1f7f6;
+}
+
+.skills-category {
+    margin-bottom: 2rem;
+    animation-duration: 1.2s;
+}
+
+.skills-category h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #00bcd4;
+}
+
+.skills-category ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skills-category li {
+    font-size: 1.1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1.2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    min-width: 120px;
+    text-align: center;
+}
+
+.skills-category li:hover {
+    transform: scale(1.05);
+    background-color: #00bcd4;
+    color: black;
+}
+
+/* Project Cards */
+.projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/* .project {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    animation: float 5s ease-in-out infinite;
+} */
+.project {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    animation: float 5s ease-in-out infinite;
+}
+
+.project-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.project:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.project h3 {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.project-btn {
+    background-color: #00bcd4;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.project-btn:hover {
+    background-color: #008c9e;
+}
+
+/* Contact */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    margin: 3rem;
+    animation: slideInRight 1s ease;
+}
+
+.contact-info,
+.contact-form {
+    flex: 1;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px #00bcd4;
+}
+
+button.send-btn {
+    background-color: #7f5af0;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+button.send-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    justify-content: center;
+    font-size: 0.9rem;
+    opacity: 0.6;
+    animation: fadeInUp 2s ease;
+}
